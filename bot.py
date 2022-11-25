@@ -97,7 +97,7 @@ async def stats(event):
 async def broadcastt(event):
     if event.sender_id not in OWNERS:
         return await event.reply("You are not allowed to use this command,first buy bot.", buttons=Button.url("Join Channel", url="https://t.me/AP_PROOFS"))
-@bot.on(events.NewMessage(incoming=True, from_users=PROMODE, pattern="^/autopost$"))
+@bot.on(events.NewMessage(incoming=True, from_users=OWNERS, pattern="^/autopost$"))
 async def broadcast(event):
     print("we are into event")
     while True:
