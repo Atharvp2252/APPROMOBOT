@@ -17,7 +17,6 @@ log = logging.getLogger("AP")
 try:
     BOT_TOKEN = config("BOT_TOKEN")
     OWNERS = config("OWNERS")
-    PROMODE = config("PROMODE")
     REDIS_URI = config("REDIS_URI")
     REDIS_PASSWORD = config("REDIS_PASSWORD")
 except Exception as ex:
@@ -135,7 +134,7 @@ async def broad(e):
             log.error(ex)
             error += 1
     await xx.edit(f"Broadcast completed.\nSuccess: {done}\nFailed: {error}")
-
+    
 
 log.info("\nBot has started.\n(c) @aphacker\n")
 bot.run_until_disconnected()
